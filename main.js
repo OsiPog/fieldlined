@@ -1,14 +1,11 @@
-// const canvas = document.querySelector("canvas")
-// const gl = canvas.getContext('webgl', { antialias: true })
-// const rust = await import('./pkg/fieldlined')
+import init from "./lib/pkg"
 
-// if (!gl) {
-//     throw "Failed to initialize WebGL"
-// }
+const canvas = document.querySelector("canvas")
+const gl = canvas.getContext('webgl', { antialias: true })
+let lib = await init()
 
-// const FRAME_TIME = 1000 / 60;
+if (!gl) {
+    throw "Failed to initialize WebGL"
+}
 
-// const client = new rust.Client()
-
-// client.say("Hello")
-console.log("Hello")
+lib.say_hi()
