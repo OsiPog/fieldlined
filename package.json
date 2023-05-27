@@ -1,9 +1,10 @@
 {
     "scripts": {
-        "dev": "vite",
+        "dev": "npm run wasm-build && vite",
         "build": "vite build",
         "preview": "vite preview",
-        "cargo-build": "cargo build --target wasm32-unknown-unknown"
+        "cargo-build": "cd lib && cargo build --target wasm32-unknown-unknown",
+        "wasm-build": "wasm-pack build ./lib --target web"
     },
     "dependencies": {
         "vite": "^4.3.9",
